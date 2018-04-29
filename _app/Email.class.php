@@ -23,7 +23,7 @@ class Email
         $this->mail->Port = $port;                                  // TCP port to connect to
         $this->mail->CharSet = 'utf-8';                             // Charset
         $this->mail->setLanguage($setLanguage);                     // Email message language
-        $this->mail->isHTML(true);                           // To accept HTML in the message
+        $this->mail->isHTML(true);                                  // To accept HTML in the message
         $this->mail->setFrom($setFromEmail, $setFromName);          // Set email and name to send
     }
 
