@@ -9,7 +9,7 @@ class Email
 {
     private $mail = \stdClass::class;
 
-    public function __construct($smtpDebug, $host, $user, $pass, $smtpSecure, $port, $setFromEmail, $setFromName)
+    public function __construct($smtpDebug, $host, $user, $pass, $smtpSecure, $port, $setLanguage, $setFromEmail, $setFromName)
     {
         $this->mail = new PHPMailer(true);
         //Server settings
@@ -19,10 +19,10 @@ class Email
         $this->mail->SMTPAuth = true;                               // Enable SMTP authentication
         $this->mail->Username = $user;                              // SMTP username
         $this->mail->Password = $pass;                              // SMTP password
-        $this->mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $this->mail->SMTPSecure = $smtpSecure;                      // Enable TLS encryption, `ssl` also accepted
         $this->mail->Port = $port;                                  // TCP port to connect to
         $this->mail->CharSet = 'utf-8';                             // Charset
-        $this->mail->setLanguage('br');                    // Email message language
+        $this->mail->setLanguage($setLanguage);                     // Email message language
         $this->mail->isHTML(true);                           // To accept HTML in the message
         $this->mail->setFrom($setFromEmail, $setFromName);          // Set email and name to send
     }
