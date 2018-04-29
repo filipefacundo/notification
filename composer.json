@@ -1,0 +1,29 @@
+{
+    "name": "filipe/notification",
+    "description": "This is a libray that uses composer as the basis for generating email notifications",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Filipe Facundo",
+            "email": "filipefbezerra@outlook.com",
+			"homepage": "https://filipefbezerra.com.br",
+			"role": "CEO and Founder"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "phpmailer/phpmailer": "^6.0"
+    },
+	"config":{
+		"vendor-dir": "lib_ext"
+	},
+    "autoload": {
+        "psr-4": {
+          "Notification\\": "_app"
+        },
+        "classmap": [
+          "_app"
+        ]
+    }
+}
