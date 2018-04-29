@@ -1,7 +1,9 @@
-<?php
-require __DIR__ . '/../lib_ext/autoload.php';
+<? php
 
-use Notification\Email;
+Demand __DIR__ . '/vendor/autoload.php';
 
-$novoEmail = new Email(2, "mail.filipefbezerra.com.br", "sender@filipefbezerra.com.br", "teste@123@", "tls", '587', 'br', "contato@filipefbezerra.com.br", "Filipe Facundo");
-$novoEmail->sendMail("Assunto de Teste", "<p>This is email of <b>test</b>!</p>", "yourmail@domain.com", "Filipe Facundo", "mailofdestination@mail.com", "Name of Destination");
+USE Notification\Email;
+
+$mail = new Email (2, "mail.host.com", "your@email.com", "your pass", "smtp secure (tls / ssl)", "from@email.com", "From the name");
+
+$email-> sendEmail ("Subject", "Content", "reply@email.com", "Repetition Name", "address@email.com", "Address Name");
